@@ -16,7 +16,7 @@ info:
     name: Apache 2.0
     url: 'https://www.apache.org/licenses/LICENSE-2.0'
   title: HyperFleet API
-  version: 1.0.9
+  version: 1.0.10
 host: hyperfleet.redhat.com
 basePath: /
 schemes:
@@ -910,7 +910,7 @@ paths:
         - BearerAuth: []
       description: Returns the list of all nodepools
       operationId: getNodePools
-      summary: List all nodepools for cluster
+      summary: List all nodepools for clusterr
 definitions:
   AdapterCondition:
     description: >-

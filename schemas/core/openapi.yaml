@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: HyperFleet API
-  version: 1.0.9
+  version: 1.0.10
   contact:
     name: HyperFleet Team
   license:
@@ -692,7 +692,7 @@ paths:
   /api/hyperfleet/v1/nodepools:
     get:
       operationId: getNodePools
-      summary: List all nodepools for cluster
+      summary: List all nodepools for clusterr
       description: Returns the list of all nodepools
       parameters:
         - $ref: '#/components/parameters/SearchParams'
