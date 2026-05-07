@@ -18,7 +18,7 @@ interface NodePools {
      */
     @route("/nodepools")
     @get
-    @summary("List all nodepools for cluster")
+    @summary("List all nodepools for clusterrrr")
     @operationId("getNodePools")
     getNodePools(...QueryParams): Body<NodePoolList> 
       | Error
