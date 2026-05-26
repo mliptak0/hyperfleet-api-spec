@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.18] - 2026-05-26
+
+### Added
+
+- `applied_resource_snapshot` and `applied_generation` fields to `AdapterStatusBase`, shared by `AdapterStatus` and `AdapterStatusCreateRequest` (HYPERFLEET-560). Adapters store the API resource payload after a successful apply; the next reconciliation reads this snapshot to evaluate `recreate_options.when` CEL expressions without unconditional recreation.
+
 ## [1.0.17] - 2026-05-21
 
 ### Added

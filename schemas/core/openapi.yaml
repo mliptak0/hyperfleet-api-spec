@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: HyperFleet API
-  version: 1.0.17
+  version: 1.0.18
   contact:
     name: HyperFleet Team
     url: https://github.com/openshift-hyperfleet
@@ -1153,6 +1153,21 @@ components:
           type: object
           additionalProperties: {}
           description: Adapter-specific data (structure varies by adapter type)
+        applied_resource_snapshot:
+          type: object
+          additionalProperties: {}
+          description: |-
+            Snapshot of the API resource payload at the time of the last successful apply.
+            Stored by the adapter after a successful reconciliation and read on the next
+            reconciliation to evaluate recreate_options.when CEL expressions (ADR-005).
+            Absent on the first apply or when the adapter does not support recreation strategy.
+        applied_generation:
+          type: integer
+          format: int32
+          description: |-
+            Generation of the resource at the time of the last successful apply.
+            Corresponds to applied_resource_snapshot and allows callers to determine
+            whether the stored snapshot is current.
         conditions:
           type: array
           items:
@@ -1250,6 +1265,21 @@ components:
           type: object
           additionalProperties: {}
           description: Adapter-specific data (structure varies by adapter type)
+        applied_resource_snapshot:
+          type: object
+          additionalProperties: {}
+          description: |-
+            Snapshot of the API resource payload at the time of the last successful apply.
+            Stored by the adapter after a successful reconciliation and read on the next
+            reconciliation to evaluate recreate_options.when CEL expressions (ADR-005).
+            Absent on the first apply or when the adapter does not support recreation strategy.
+        applied_generation:
+          type: integer
+          format: int32
+          description: |-
+            Generation of the resource at the time of the last successful apply.
+            Corresponds to applied_resource_snapshot and allows callers to determine
+            whether the stored snapshot is current.
         observed_time:
           type: string
           format: date-time

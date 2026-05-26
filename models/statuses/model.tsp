@@ -63,6 +63,21 @@ model AdapterStatusBase {
    * Adapter-specific data (structure varies by adapter type)
    */
   data?: Record<unknown>;
+
+  /**
+   * Snapshot of the API resource payload at the time of the last successful apply.
+   * Stored by the adapter after a successful reconciliation and read on the next
+   * reconciliation to evaluate recreate_options.when CEL expressions (ADR-005).
+   * Absent on the first apply or when the adapter does not support recreation strategy.
+   */
+  applied_resource_snapshot?: Record<unknown>;
+
+  /**
+   * Generation of the resource at the time of the last successful apply.
+   * Corresponds to applied_resource_snapshot and allows callers to determine
+   * whether the stored snapshot is current.
+   */
+  applied_generation?: int32;
 }
 
 /**

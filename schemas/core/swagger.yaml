@@ -17,7 +17,7 @@ info:
     name: Apache 2.0
     url: 'https://www.apache.org/licenses/LICENSE-2.0'
   title: HyperFleet API
-  version: 1.0.17
+  version: 1.0.18
 host: hyperfleet.redhat.com
 basePath: /
 schemes:
@@ -1379,6 +1379,31 @@ definitions:
       adapter:
         description: 'Adapter name (e.g., "validator", "dns", "provisioner")'
         type: string
+      applied_generation:
+        description: >-
+          Generation of the resource at the time of the last successful apply.
+
+          Corresponds to applied_resource_snapshot and allows callers to
+          determine
+
+          whether the stored snapshot is current.
+        format: int32
+        type: integer
+      applied_resource_snapshot:
+        additionalProperties: {}
+        description: >-
+          Snapshot of the API resource payload at the time of the last
+          successful apply.
+
+          Stored by the adapter after a successful reconciliation and read on
+          the next
+
+          reconciliation to evaluate recreate_options.when CEL expressions
+          (ADR-005).
+
+          Absent on the first apply or when the adapter does not support
+          recreation strategy.
+        type: object
       conditions:
         description: |-
           Kubernetes-style conditions tracking adapter state
@@ -1473,6 +1498,31 @@ definitions:
       adapter:
         description: 'Adapter name (e.g., "validator", "dns", "provisioner")'
         type: string
+      applied_generation:
+        description: >-
+          Generation of the resource at the time of the last successful apply.
+
+          Corresponds to applied_resource_snapshot and allows callers to
+          determine
+
+          whether the stored snapshot is current.
+        format: int32
+        type: integer
+      applied_resource_snapshot:
+        additionalProperties: {}
+        description: >-
+          Snapshot of the API resource payload at the time of the last
+          successful apply.
+
+          Stored by the adapter after a successful reconciliation and read on
+          the next
+
+          reconciliation to evaluate recreate_options.when CEL expressions
+          (ADR-005).
+
+          Absent on the first apply or when the adapter does not support
+          recreation strategy.
+        type: object
       conditions:
         items:
           $ref: '#/definitions/ConditionRequest'
