@@ -49,6 +49,9 @@ model Resource {
   /** Non-ownership associations to other resources, keyed by reference type */
   references?: Record<ObjectReference[]>;
 
+  /** Tenancy dimensions carried by the resource. Server-populated and read-only; not accepted on create or patch. */
+  tenancy?: Record<string>;
+
   ...APIMetadata;
 }
 

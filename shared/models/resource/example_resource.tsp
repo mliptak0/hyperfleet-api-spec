@@ -8,6 +8,7 @@ const exampleResource: Resource = #{
   name: "my-resource-1",
   labels: #{ environment: "production", team: "platform" },
   spec: #{},
+  tenancy: #{ organization_id: "org-123", account_id: "acct-456" },
   generation: 1,
   status: #{
     conditions: #[],

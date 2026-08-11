@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.27] - 2026-08-11
+
+### Added
+
+- `tenancy` map (string to string) to the `Resource` response model, server-populated and read-only (HYPERFLEET-1467)
+
 ## [1.0.26] - 2026-07-09
 
 ### Added
@@ -240,7 +246,8 @@ First official stable release of the HyperFleet API specification.
 - Interactive API documentation
 
 <!-- Links -->
-[Unreleased]: https://github.com/openshift-hyperfleet/hyperfleet-api-spec/compare/v1.0.26...HEAD
+[Unreleased]: https://github.com/openshift-hyperfleet/hyperfleet-api-spec/compare/v1.0.27...HEAD
+[1.0.27]: https://github.com/openshift-hyperfleet/hyperfleet-api-spec/compare/v1.0.26...v1.0.27
 [1.0.26]: https://github.com/openshift-hyperfleet/hyperfleet-api-spec/compare/v1.0.25...v1.0.26
 [1.0.25]: https://github.com/openshift-hyperfleet/hyperfleet-api-spec/compare/v1.0.24...v1.0.25
 [1.0.23]: https://github.com/openshift-hyperfleet/hyperfleet-api-spec/compare/v1.0.22...v1.0.23

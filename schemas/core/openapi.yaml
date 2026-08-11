@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: HyperFleet API
-  version: 1.0.26
+  version: 1.0.27
   contact:
     name: HyperFleet Team
     url: https://github.com/openshift-hyperfleet
@@ -2446,6 +2446,11 @@ components:
             items:
               $ref: '#/components/schemas/ObjectReference'
           description: Non-ownership associations to other resources, keyed by reference type
+        tenancy:
+          type: object
+          additionalProperties:
+            type: string
+          description: Tenancy dimensions carried by the resource. Server-populated and read-only; not accepted on create or patch.
         created_time:
           type: string
           format: date-time
@@ -2476,6 +2481,9 @@ components:
           environment: production
           team: platform
         spec: {}
+        tenancy:
+          organization_id: org-123
+          account_id: acct-456
         generation: 1
         status:
           conditions: []
